@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import FormDialogCompetenze from "./FormDialogCompetenze";
 import { useLocation } from "react-router-dom";
 import FormDialogDelete from "./FormDialogDelete";
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -52,6 +52,12 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
+
+  useEffect(() => {
+    if (location.pathname === '/modify') {
+      setDeleteToggle(true)
+    }
+  }, [])
 
 
   // FUNZIONI
@@ -200,7 +206,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
                   }
 
                 </Col>
-                <Col xs={6}>
+                <Col xs={6} className='d-flex flex-column justify-content-between'>
                   <Row>
                     <h3>{experience.company.toUpperCase()} {experience.area}</h3>
                   </Row>
@@ -219,6 +225,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
                         <FormDialogDelete
                           experience={experience}
                           fetchExperiences={fetchExperiences}
+                          setDeleteToggle={setDeleteToggle}
                           deleteToggle={deleteToggle}
                           blobFile={blobFile}
                           setBlobFile={setBlobFile}

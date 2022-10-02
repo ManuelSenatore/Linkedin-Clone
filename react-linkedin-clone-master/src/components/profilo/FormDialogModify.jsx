@@ -10,7 +10,7 @@ import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 import { Col } from 'react-bootstrap'
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 
 
@@ -28,6 +28,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
     //----------------------------------------------------------------
+
 
     //FUNZIONI
     const formValidation = () => { // ritorna true se tutti i campi del form sono compilati
@@ -223,7 +224,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                         setExperienceSingle(experience)
                     }}>ANNULLA</Button>
                     <Button
-                        disabled={formValidation()}
+                        disabled={!formValidation()}
                         className={formValidation() ? 'text-success' : 'text-secondary'}
                         onClick={() => {
                             handleClose()

@@ -49,7 +49,7 @@
 .loginUser:hover {
   color: #fff;
   background-color: #0a66c2;
-  box-shadow: 0px 2px 10px #0a66c2;
+  box-shadow: 0 2px 10px #0a66c2;
 }
 
 /* --------------------------------------- */
@@ -230,10 +230,11 @@
 .CardProfileCerchioImg {
   border-radius: 50%;
   height: 100%;
+  width: 100%;
 }
 
 .CardProfileText {
-  padding: 0px 20px 10px;
+  padding: 0 20px 10px;
 }
 
 .CardProfileButton1,
@@ -308,9 +309,17 @@
 }
 .CardCompetenzeImg {
   border-radius: 50% !important;
-  min-width: 100%;
-  min-height: 50%;
+  width: 120px;
+  height: 120px;
 }
+
+   @media screen and (min-width: 768px) {
+    .CardCompetenzeImg {
+      width: 150px;
+      height: 150px;
+    }
+   } 
+
 .CardAziende {
   border: 1px solid gainsboro;
   border-radius: 10px;
@@ -337,6 +346,7 @@
 
 .HomeCardProfileCerchioImg {
   height: 100%;
+  width: 100%;
   border-radius: 50%;
 }
 .PostUser {
@@ -397,4 +407,45 @@
 }
 ul {
   padding: 0;
+}
+/************************FOOTER ************************/
+.titleLink {
+  color: #0a66c2;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.inIcon {
+  transform: scale(2);
+  position: relative;
+  left: 10px;
+}
+
+.footerSecondaRow {
+  font-weight: 600;
+}
+.footerTestoSecondario {
+  font-weight: 400;
+}
+
+.footerDomande,
+.footerGestisci {
+  font-size: 1.2rem;
+}
+.footerIconGestisci,
+.footerIconDomande {
+  transform: scale(1.5);
+}
+.footerDrop {
+  background-color: transparent!important;
+  border: none;
+  color: gray;
+  padding: 0;
+  font-weight: 600;
+}
+.footerDrop:focus {
+  color:#0a66c2 !important;
+}
+.footerDropMenu {
+  font-weight: bold;
 }
